@@ -24,11 +24,11 @@
         <div class="actions">
           <!-- no back here -->
 
-          <button class="icon-btn" title="Move forward">
+          <button class="icon-btn" (click)="moveForward(task, todoTasks, inProgressTasks)" title="Move forward">
             ▶
           </button>
 
-          <button class="icon-btn delete" title="Delete">
+          <button class="icon-btn delete" (click)="deleteTask(task, todoTasks)" title="Delete">
             🗑
           </button>
         </div>
@@ -47,15 +47,15 @@
 
         <div class="actions">
 
-          <button class="icon-btn" title="Move back">
+          <button class="icon-btn" (click)="moveBackward(task, inProgressTasks, todoTasks)" title="Move back">
             ◀
           </button>
 
-          <button class="icon-btn" title="Move forward">
+          <button class="icon-btn" (click)="moveForward(task, inProgressTasks, doneTasks)" title="Move forward">
             ▶
           </button>
 
-          <button class="icon-btn delete" title="Delete">
+          <button class="icon-btn delete" (click)="deleteTask(task, inProgressTasks)" title="Delete">
             🗑
           </button>
 
@@ -75,13 +75,13 @@
 
         <div class="actions">
 
-          <button class="icon-btn" title="Move back">
+          <button class="icon-btn" (click)="moveBackward(task, doneTasks, inProgressTasks)" title="Move back">
             ◀
           </button>
 
           <!-- no forward here -->
 
-          <button class="icon-btn delete" title="Delete">
+          <button class="icon-btn delete" (click)="deleteTask(task, doneTasks)" title="Delete">
             🗑
           </button>
 
