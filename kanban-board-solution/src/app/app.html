@@ -1,0 +1,95 @@
+<!-- app.html -->
+
+<div class="app-container">
+
+  <h1>Kanban board</h1>
+
+  <!-- input row -->
+  <div class="task-input-row">
+    <input type="text" placeholder="Enter task..." [(ngModel)]="newTask" (keyup.enter)="addTask()" class="task-input" />
+    <button class="btn primary" (click)="addTask()">Add</button>
+  </div>
+
+  <!-- board -->
+  <div class="board">
+
+    <!-- ================= To Do ================= -->
+    <div class="column todo">
+      <h2>To Do</h2>
+
+      <div class="task" *ngFor="let task of todoTasks">
+
+        <span class="task-text">{{ task }}</span>
+
+        <div class="actions">
+          <!-- no back here -->
+
+          <button class="icon-btn" title="Move forward">
+            ▶
+          </button>
+
+          <button class="icon-btn delete" title="Delete">
+            🗑
+          </button>
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ================= In Progress ================= -->
+    <div class="column progress">
+      <h2>In Progress</h2>
+
+      <div class="task" *ngFor="let task of inProgressTasks">
+
+        <span class="task-text">{{ task }}</span>
+
+        <div class="actions">
+
+          <button class="icon-btn" title="Move back">
+            ◀
+          </button>
+
+          <button class="icon-btn" title="Move forward">
+            ▶
+          </button>
+
+          <button class="icon-btn delete" title="Delete">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- ================= Done ================= -->
+    <div class="column done">
+      <h2>Done</h2>
+
+      <div class="task" *ngFor="let task of doneTasks">
+
+        <span class="task-text">{{ task }}</span>
+
+        <div class="actions">
+
+          <button class="icon-btn" title="Move back">
+            ◀
+          </button>
+
+          <!-- no forward here -->
+
+          <button class="icon-btn delete" title="Delete">
+            🗑
+          </button>
+
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
